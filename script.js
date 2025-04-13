@@ -3,17 +3,20 @@ document.getElementById("genre").addEventListener("change", function() {
   // Get the selected genre
   const selectedGenre = document.getElementById("genre").value;
 
-  // Add movies to the movieList based on the selected genre
+  // Create an empty array to hold the movie titles for the selected genre
+  let movieList = [];
+
+  // Check the selected genre and add the corresponding movie titles to the movieList
   if (selectedGenre === "Comedy") {
-    console.log("You selected 'Comedy'");
+    movieList.push("The Hangover", "Superbad", "Step Brothers", "Dumb and Dumber");
   } else if (selectedGenre === "Action") {
-    console.log("You selected 'Action'");
+    movieList.push("Mad Max: Fury Road", "John Wick", "Die Hard", "The Dark Knight");
   } else if (selectedGenre === "Drama") {
-    console.log("You selected 'Drama'");
+    movieList.push("The Shawshank Redemption", "Forrest Gump", "The Godfather", "Fight Club");
   } else if (selectedGenre === "Sci-Fi") {
-    console.log("You selected 'Sci-Fi'");
+    movieList.push("Inception", "The Matrix", "Interstellar", "Blade Runner 2049");
   }
 
-  // Display the list of movies on the page
-  document.getElementById("movieRecommendations").innerText = `Enjoy: !`;
+  // Display the list of movies on the page using template literals
+  document.getElementById("movieRecommendations").innerText = `Enjoy: ${movieList.join(", ")}`;
 });
